@@ -30,6 +30,7 @@ func (r *Router) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 		rw.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 		rw.Header().Set("Access-Control-Allow-Headers",
 			"Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
+		rw.Header().Set("Access-Control-Allow-Credentials", "true")
 	}
 	// Stop here if its Preflighted OPTIONS request
 	if req.Method == "OPTIONS" {
